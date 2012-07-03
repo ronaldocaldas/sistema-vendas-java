@@ -1,6 +1,6 @@
 import org.hibernate.Session;
 
-import com.kurtphpr.sistema.vendas.HibernateUtil;
+import com.kurtphpr.sistema.util.HibernateUtil;
 
 
 public class Conecta {

@@ -1,4 +1,4 @@
-package com.kurtphpr.sistema.vendas;
+package com.kurtphpr.sistema.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
