@@ -1,4 +1,4 @@
-package com.kurtphpr.sistema.vendas;
+package com.kurtphpr.sistema.venda;
 
 import java.sql.Date;
 
