@@ -3,6 +3,7 @@
     <wb-module deploy-name="sistema-vendas-java">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/JavaSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/JavaTest"/>
         <property name="context-root" value="sistema-vendas-java"/>
         <property name="java-output-path" value="/sistema-vendas-java/WebContent/WEB-INF/classes"/>
     </wb-module>
