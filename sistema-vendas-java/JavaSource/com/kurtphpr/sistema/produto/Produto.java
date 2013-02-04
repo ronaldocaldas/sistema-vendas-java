@@ -27,6 +27,19 @@ public class Produto {
 
 	private float valor;
 
+	public Produto(){
+	}
+	
+	public Produto(String unidade, String descricao, Date dataCadastro,
+			Integer estoque, float valor) {
+		
+		this.unidade = unidade;
+		this.descricao = descricao;
+		this.dataCadastro = dataCadastro;
+		this.estoque = estoque;
+		this.valor = valor;
+	}
+
 	public Integer getId() {
 		return id;
 	}
