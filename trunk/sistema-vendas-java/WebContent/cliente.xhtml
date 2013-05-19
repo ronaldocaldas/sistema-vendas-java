@@ -15,7 +15,10 @@
 				<h:inputText value="#{clienteBean.clienteSelecionado.nome}" />
 
 				<h:outputLabel value="CPF:" />
-				<h:inputText value="#{clienteBean.clienteSelecionado.cpf}" />
+				<h:inputText value="#{clienteBean.clienteSelecionado.cpf}" >
+				<f:validator validatorId="cpf"/>
+				</h:inputText>
+				
 
 				<h:outputLabel value="Endereço:" />
 				<h:inputText value="#{clienteBean.clienteSelecionado.endereco}" />
@@ -24,7 +27,9 @@
 				<h:inputText value="#{clienteBean.clienteSelecionado.email}" />
 
 				<h:outputLabel value="Renda:" />
-				<h:inputText value="#{clienteBean.clienteSelecionado.renda}" />
+				<h:inputText value="#{clienteBean.clienteSelecionado.renda}" >
+				<f:convertNumber minFractionDigits="2"/>
+				</h:inputText>
 
 			</h:panelGrid>
 
@@ -65,7 +70,10 @@
 			
 				<h:column>
 			<f:facet name="header">Renda</f:facet>
-			#{cliente.renda}
+			
+			<h:outputText value="#{cliente.renda}" >
+ 				<f:convertNumber currencyCode="BRL" type="currency" />
+ 			</h:outputText>			
 			</h:column>
 			
 			</h:dataTable>
