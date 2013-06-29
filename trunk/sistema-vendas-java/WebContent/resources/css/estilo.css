@@ -1,0 +1,17 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+.bottom {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	text-align: center;
+	vertical-align: middle;
+	color: #8E969D;
+}
