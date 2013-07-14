@@ -23,6 +23,24 @@ public class Cliente {
 	private Date dataCadastro;
 	private float renda;
 
+	
+	public Cliente(){
+		
+	}
+	
+	public Cliente(String cpf, String email, String endereco, String nome,
+			Date dataCadastro, float renda) {
+		super();
+		this.cpf = cpf;
+		this.email = email;
+		this.endereco = endereco;
+		this.nome = nome;
+		this.dataCadastro = dataCadastro;
+		this.renda = renda;
+	}
+
+
+
 	public Integer getId() {
 		return id;
 	}

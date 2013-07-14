@@ -30,4 +30,10 @@ public class ClienteDAOHibernate implements ClienteDAO {
 		return lista.list();
 	}
 
+	@Override
+	public void excluir(Cliente cliente) {
+		this.sessao.delete(cliente);
+		
+	}
+
 }

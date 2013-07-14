@@ -20,4 +20,9 @@ public class ClienteRN {
 		return this.clienteDAO.listar();
 	}
 
+	public void excluir(Cliente cliente) {
+		this.clienteDAO.excluir(cliente);
+		
+	}
+
 }
