@@ -25,4 +25,13 @@ public class ClienteRN {
 		
 	}
 
+	public Cliente pesquisar(String string) {
+		return this.clienteDAO.pesquisar(string);
+	}
+
+	public void alterar(Cliente cliente) {
+	 this.clienteDAO.alterar(cliente);
+		
+	}
+
 }
