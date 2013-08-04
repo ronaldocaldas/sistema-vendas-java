@@ -38,7 +38,7 @@
 		</h:form>
 
 		<h:form id="lista">
-			<h:dataTable value="#{clienteBean.lista}" var="cliente" border="1">
+			<h:dataTable value="#{clienteBean.lista}" var="cliente" border="1"  rendered="#{not empty clienteBean.lista}">
 			<f:facet name="heder">Listagem de Clientes</f:facet>
 			
 			<h:column>
@@ -62,6 +62,13 @@
 			<h:outputText value="#{cliente.renda}" >
  				<f:convertNumber currencyCode="BRL" type="currency" />
  			</h:outputText>			
+			</h:column>
+			<h:column>
+			<f:facet name="header">Ações</f:facet>
+				<h:commandLink  action="#{clienteBean.excluir}"  onclick="if (!confirm('Deseja realmente excluir o cliente #{cliente.nome}?')) return false;">
+				<h:graphicImage library="imagens"  name="remove-icon.png"/>
+				<f:setPropertyActionListener target="#{clienteBean.clienteSelecionado}" value="#{cliente}" />
+				</h:commandLink>
 			</h:column>
 			
 			</h:dataTable>
