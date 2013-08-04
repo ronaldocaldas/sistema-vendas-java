@@ -24,6 +24,8 @@ public class ClienteBean {
 		FacesContext contexto = FacesContext.getCurrentInstance();
 		contexto.addMessage(null, faces);
 		
+		this.lista = null;
+		
 	}
 
 	public Cliente getClienteSelecionado() {
@@ -42,4 +44,9 @@ public class ClienteBean {
 		return lista;
 	}
 
+	public void excluir(){
+		ClienteRN clienteRN = new ClienteRN();
+		clienteRN.excluir(this.clienteSelecionado);
+		this.lista = null;
+	}
 }
