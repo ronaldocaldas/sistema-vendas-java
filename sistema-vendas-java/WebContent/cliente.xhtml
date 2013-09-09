@@ -10,9 +10,11 @@
 	<ui:define name="body">
 		<h:form id="edicao">
 			<h:messages />
+			<h:inputHidden value="#{clienteBean.clienteSelecionado.id}" />
+			
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Nome:" />
-				<h:inputText value="#{clienteBean.clienteSelecionado.nome}" />
+				<h:inputText id="nomeCliente" value="#{clienteBean.clienteSelecionado.nome}"  required="true"/>
 
 				<h:outputLabel value="CPF:" />
 				<h:inputText value="#{clienteBean.clienteSelecionado.cpf}" >
@@ -34,6 +36,7 @@
 			</h:panelGrid>
 
 			<h:commandButton value="Salvar" action="#{clienteBean.salvar}" />
+			<h:commandButton value="Novo Cliente" action="#{clienteBean.novo}" />
 
 		</h:form>
 
@@ -69,6 +72,11 @@
 				<h:graphicImage library="imagens"  name="remove-icon.png"/>
 				<f:setPropertyActionListener target="#{clienteBean.clienteSelecionado}" value="#{cliente}" />
 				</h:commandLink>
+				<h:commandLink>
+				<h:graphicImage library="imagens"  name="wrench-icon.png"/>
+				<f:setPropertyActionListener target="#{clienteBean.clienteSelecionado}" value="#{cliente}" />
+				</h:commandLink>
+				
 			</h:column>
 			
 			</h:dataTable>
