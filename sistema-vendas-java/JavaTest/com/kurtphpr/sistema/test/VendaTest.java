@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -48,7 +49,20 @@ public class VendaTest extends TestHeranca {
 
 		produtoRN.salvar(p1);
 		produtoRN.salvar(p2);
-		produtoRN.salvar(p2);
+		produtoRN.salvar(p3);
+
+	}
+
+	@After
+	public void limpaBanco() {
+		VendaRN vendaRN = new VendaRN();
+
+		List<Venda> produtos = vendaRN.listar();
+
+		for (Venda produto : produtos) {
+			vendaRN.excluir(produto);
+
+		}
 
 	}
 
@@ -57,9 +71,24 @@ public class VendaTest extends TestHeranca {
 
 		VendaRN vendaRN = new VendaRN();
 
-		vendaRN.registraVenda(c1, p1);
-		vendaRN.registraVenda(c2, p2);
-		vendaRN.registraVenda(c3, p3);
+		Venda venda1 = new Venda();
+		venda1.setCliente(c1);
+		venda1.setProduto(p1);
+		venda1.setDataVenda(new Date());
+
+		Venda venda2 = new Venda();
+		venda2.setCliente(c2);
+		venda2.setProduto(p2);
+		venda2.setDataVenda(new Date());
+
+		Venda venda3 = new Venda();
+		venda3.setCliente(c3);
+		venda3.setProduto(p3);
+		venda3.setDataVenda(new Date());
+
+		vendaRN.registraVenda(venda1);
+		vendaRN.registraVenda(venda2);
+		vendaRN.registraVenda(venda3);
 
 		List<Venda> vendas = vendaRN.listar();
 
