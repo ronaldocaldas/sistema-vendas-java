@@ -19,13 +19,15 @@
 			<ui:insert name="pageHeader">Page Header</ui:insert>
 		</div>
 		<div id="mainnav">
+		<h:form>
 			<ul>
 				<li><a href="#">Cadastro de Clientes</a></li>
 				<li><a href="#">Cadastro de Produtos</a></li>
-				<li><a href="#">Registro da Venda</a></li>
+				<h:commandLink action="registroVendas" value="Registro da Venda" />
 				<li><a href="#">Sobre</a></li>
 			</ul>
-		</div>
+		</h:form>
+					</div>
 		<div id="menu">
 			<h3>Archives</h3>
 			<ul>
