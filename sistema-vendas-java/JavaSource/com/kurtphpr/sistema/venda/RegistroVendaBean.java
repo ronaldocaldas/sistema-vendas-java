@@ -22,7 +22,7 @@ public class RegistroVendaBean {
 	private List<SelectItem> clienteSelect;
 	private float valorTotal;
 
-	public void getBuscaProduto() {
+	public String buscarProduto() {
 
 		ProdutoRN produtoRN = new ProdutoRN();
 		Produto produtoPesquisado = new Produto();
@@ -41,6 +41,7 @@ public class RegistroVendaBean {
 
 		}
 
+		return null;
 	}
 
 	private void calculaTotal() {
