@@ -19,7 +19,13 @@
 				<f:selectItem itemLabel="Selecione um cliente:"/>
 					<f:selectItems value="#{registroVendas.clienteSelect}" />
 				</h:selectOneMenu>
-
+				
+				<h:outputLabel value="Produto:" />
+				<h:panelGroup>
+					<h:inputText value="#{registroVendas.produtoSelecionado.descricao}" />
+					<h:commandButton value="Pesquizar" action="#{registroVendas.buscarProduto}" />
+				</h:panelGroup>
+	
 			</h:panelGrid>
 
 		</h:form>

@@ -50,4 +50,10 @@ public class ClienteDAOHibernate implements ClienteDAO {
 		this.sessao.update(cliente);
 	}
 
+	@Override
+	public Cliente pesquisarPorCodigo(Integer codigo) {
+		
+		return (Cliente) this.sessao.get(Cliente.class, codigo);
+	}
+
 }
