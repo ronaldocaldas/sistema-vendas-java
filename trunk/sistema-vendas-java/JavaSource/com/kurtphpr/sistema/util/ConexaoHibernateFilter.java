@@ -39,7 +39,7 @@ public class ConexaoHibernateFilter implements Filter{
 				t.printStackTrace();
 			}
 			
-			throw new ServletException();
+			throw new ServletException(ex.getMessage());
 		}
 	
 	}

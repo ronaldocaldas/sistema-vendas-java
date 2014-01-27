@@ -54,6 +54,16 @@ public class RegistroVendaBean {
 
 	}
 
+	public String excluirProdutoCarrinho(){
+		
+		if(this.carrinhoCompras != null && !this.carrinhoCompras.isEmpty()){
+			if(this.produtoSelecionado != null){
+				this.carrinhoCompras.remove(this.produtoSelecionado);
+			}
+		}
+		
+		return null;
+	}
 	public Cliente getClienteSelecionado() {
 		return clienteSelecionado;
 	}
