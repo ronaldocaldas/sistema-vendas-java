@@ -18,14 +18,40 @@
 				<h:selectOneMenu value="#{registroVendas.clienteSelecionado}">
 				<f:selectItem itemLabel="Selecione um cliente:"/>
 					<f:selectItems value="#{registroVendas.clienteSelect}" />
+					<f:ajax event="change"  render="idClienteSelecionado"/>
+					
 				</h:selectOneMenu>
 				
 				<h:outputLabel value="Produto:" />
 				<h:panelGroup>
 					<h:inputText value="#{registroVendas.produtoSelecionado.descricao}" />
-					<h:commandButton value="Pesquizar" action="#{registroVendas.buscarProduto}" />
+					<h:commandButton value="Pesquisar" action="#{registroVendas.buscarProduto}" />
 				</h:panelGroup>
 	
+				<h:outputLabel value="Id do Cliente: " />
+				<h:outputText id="idClienteSelecionado" value="#{registroVendas.clienteSelecionado.id}" />
+						
+				<h:dataTable value="#{registroVendas.carrinhoCompras}" rendered="#{not empty registroVendas.carrinhoCompras}" var="produto" border="1">
+
+
+					<f:facet name="header">Listagem carrinho de compras</f:facet>
+
+					<h:column>
+						<f:facet name="header">Descriçao</f:facet>
+			#{produto.descricao}
+			</h:column>
+			
+				<h:column>
+			<f:facet name="header">Ações</f:facet>
+				<h:commandLink  action="#{registroVendas.excluirProdutoCarrinho}"  onclick="if (!confirm('Deseja realmente excluir o produto #{produto.descricao} do carrinho?')) return false;">
+				<h:graphicImage library="imagens"  name="remove-icon.png"/>
+				<f:setPropertyActionListener target="#{registroVendas.produtoSelecionado}" value="#{produto}" />
+				</h:commandLink>
+			</h:column>
+
+				</h:dataTable>		
+						
+						
 			</h:panelGrid>
 
 		</h:form>
