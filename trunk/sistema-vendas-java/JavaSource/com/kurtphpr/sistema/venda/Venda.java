@@ -32,6 +32,14 @@ public class Venda {
 	@Column(name = "data_venda")
 	private Date dataVenda;
 
+	public Venda(Produto produto, Cliente clienteSelecionado) {
+		this.produto = produto;
+		this.cliente = clienteSelecionado;
+	}
+
+	public Venda() {
+	}
+
 	public Integer getId() {
 		return id;
 	}
