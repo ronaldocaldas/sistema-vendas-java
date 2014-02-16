@@ -2,6 +2,7 @@ package com.kurtphpr.sistema.venda;
 
 import java.util.List;
 
+import com.kurtphpr.sistema.produto.Produto;
 import com.kurtphpr.sistema.util.DAOFactory;
 
 public class VendaRN {
@@ -20,6 +21,13 @@ public class VendaRN {
 	}
 	public void excluir(Venda venda) {
 		this.vendaDAO.excluir(venda);
+		
+	}
+	public boolean existeEstoque(Produto produto) {
+		return this.vendaDAO.existeEstoqueProduto(produto);
+	}
+	public void reduzEstoqueProduto(Produto produto) {
+		this.vendaDAO.reduzEstoqueProduto(produto);
 		
 	}
 

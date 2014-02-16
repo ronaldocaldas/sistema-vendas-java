@@ -61,18 +61,21 @@ public class RegistroVendaBean {
 		
 		if(!this.carrinhoCompras.isEmpty()){
 			ArrayList<Venda> vendas = new ArrayList<Venda>();
+			VendaRN vendaRN =  new VendaRN();
 			
-			for (Produto p : this.carrinhoCompras) {
+			for (Produto produto : this.carrinhoCompras) {
 				
 				if(this.clienteSelecionado != null){
-					vendas.add(new Venda(p, this.clienteSelecionado));
+					if(vendaRN.existeEstoque(produto)){
+						vendas.add(new Venda(produto, this.clienteSelecionado));
+					}
 				}
 			}
 			
 			for (Venda venda : vendas) {
-				VendaRN vendaRN =  new VendaRN();
 				venda.setDataVenda(new Date());
 				vendaRN.registraVenda(venda);
+				vendaRN.reduzEstoqueProduto(venda.getProduto());
 			}
 			
 			
