@@ -25,7 +25,9 @@
 				<h:outputLabel value="Produto:" />
 				<h:panelGroup>
 					<h:inputText value="#{registroVendas.produtoSelecionado.descricao}" />
-					<h:commandButton value="Pesquisar" action="#{registroVendas.buscarProduto}" />
+					<h:commandButton value="Pesquisar" action="#{registroVendas.buscarProduto}" >
+					<f:ajax event="change"  render="idValorTotal"/>
+					</h:commandButton>
 				</h:panelGroup>
 	
 				<h:outputLabel value="Id do Cliente: " />
@@ -49,8 +51,15 @@
 				</h:commandLink>
 			</h:column>
 
-				</h:dataTable>		
-						
+				</h:dataTable>
+				<h:panelGroup>
+				<h:outputLabel value="SubTotal: " />	
+					<h:outputText id="idValorTotal" value="#{registroVendas.valorTotal}" >
+					<f:convertNumber currencyCode="BRL" type="currency" />
+					</h:outputText>	
+				</h:panelGroup>
+				
+				<h:commandButton value="Finalizar Venda" action="#{registroVendas.finalizarVenda}" />		
 						
 			</h:panelGrid>
 
