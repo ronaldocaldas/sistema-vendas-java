@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="pageTitle">Relatório</ui:define>
+	<ui:define name="pageHeader">Relatório de Vendas</ui:define>
+	<ui:define name="body">
+		<h:form id="idBuscaProduto">
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Selecione um Cliente:" />
+				<h:selectOneMenu value="#{relatorio.clienteSelecionado}">
+					<f:selectItem itemLabel="Selecione um cliente:" />
+					<f:selectItems value="#{relatorio.clienteSelect}" />
+
+				</h:selectOneMenu>
+			</h:panelGrid>
+			<h:panelGrid columns="1">
+				<h:commandButton action="#{relatorio.geraRelatorio}" value="Gera Relatório" />
+			</h:panelGrid>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>
