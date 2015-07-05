@@ -1,0 +1,1 @@
+Sistema de Vendas implementado com JSF2.0 Hibernate e Eclipse.
