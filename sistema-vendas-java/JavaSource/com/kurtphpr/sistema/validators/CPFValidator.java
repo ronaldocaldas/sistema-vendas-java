@@ -18,12 +18,12 @@ public class CPFValidator implements Validator {
 				|| !calcularDigitoVerificador(cpf.substring(0, 9)).equals(
 						cpf.substring(9, 11))) {
 			throw new ValidatorException(new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, "CPF inválido.",
-					"Favor informar um CPF válido."));
+					FacesMessage.SEVERITY_ERROR, "CPF inv√°lido.",
+					"Favor informar um CPF v√°lido."));
 		}
 	}
 
-	// Créditos ao JavaFree.org pelo algoritmo de validação de CPF
+	// Cr√©ditos ao JavaFree.org pelo algoritmo de valida√ß√£o de CPF
 	private String calcularDigitoVerificador(String num) {
 		Integer primDig, segDig;
 		int soma = 0, peso = 10;
