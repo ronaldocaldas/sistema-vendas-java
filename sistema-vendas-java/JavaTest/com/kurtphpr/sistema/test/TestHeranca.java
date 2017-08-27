@@ -33,7 +33,7 @@ public abstract class TestHeranca {
 					sessao.close();
 				}
 			} catch (Exception e2) {
-				System.out.println("Deu erro no fechamanto da sessão"
+				System.out.println("Deu erro no fechamanto da sess√£o"
 						+ e2.getMessage());
 			}
 

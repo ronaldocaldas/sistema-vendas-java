@@ -97,13 +97,13 @@ public class ClienteTest extends TestHeranca{
 		
 		assertEquals("teste1@mail", clientePesquisado.getEmail());
 		
-		clientePesquisado.setEndereco("Novo Endereo");
+		clientePesquisado.setEndereco("Novo EndereÃ§o");
 		
 		clienteRN.alterar(clientePesquisado);
 		
 		Cliente clienteAlterado = clienteRN.pesquisar("te 1");
 		
-		assertEquals("Novo Endereo", clienteAlterado.getEndereco());
+		assertEquals("Novo EndereÃ§o", clienteAlterado.getEndereco());
 		
 	}
 	
